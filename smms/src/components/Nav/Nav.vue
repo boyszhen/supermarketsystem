@@ -104,6 +104,7 @@
 </script>
 <style lang="less">
     .nav{
+        width: 200px;
         .el-aside {
             color: #333;
             text-align: center;
@@ -111,6 +112,9 @@
             height: 100%;
             .el-menu{
                 height: 100%;
+                .el-menu-item{
+                    min-width: 199px;
+                }
             }
         }
     }
