@@ -42,15 +42,11 @@
         .el-container{
             height: 100%;
             .el-header,.el-footer,.el-main{
-                padding: 0;
                 width: 100%;
                 background-color: #242f42;
             }
             .el-main {
                 background-color: #E9EEF3;
-                color: #333;
-                text-align: center;
-                line-height: 160px;
             }
         }
 

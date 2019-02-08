@@ -1,6 +1,6 @@
 <template>
     <div class="accountmanage">
-        这是账号管理
+        这是账号管理 1
     </div>
 </template>
 <script>
