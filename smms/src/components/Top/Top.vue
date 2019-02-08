@@ -57,7 +57,6 @@
             margin-left: 10px;
             height: 50px;
             width: 50px;
-            background-color: red;
             .img{
                 height: 100%;
                 width: 100%;

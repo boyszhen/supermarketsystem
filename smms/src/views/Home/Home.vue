@@ -1,6 +1,10 @@
 <template>
     <div class="home">
-        这是系统信息
+        <el-card class="box-card">
+            <div slot="header" class="clearfix">
+                <span>系统信息</span>
+            </div>
+        </el-card>
     </div>
 </template>
 <script>

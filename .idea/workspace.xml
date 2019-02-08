@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68975241-4ee3-45e4-8041-c61bc00044ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/smms/src/components/Footer/Footer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smms/src/components/Top/Top.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smms/src/components/Top/via.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/components/Nav/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/components/Nav/Nav.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/Index/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/Index/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smms/src/components/Top/Top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/components/Top/Top.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smms/src/views/Home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/Home/Home.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,6 +18,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smms/src/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smms/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,32 +54,17 @@
       <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smms/src/views/Index/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-              <folding>
-                <element signature="e#643#686#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="312">
+              <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Footer.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smms/src/components/Footer/Footer.vue">
+      <file leaf-file-name="Home.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smms/src/views/Home/Home.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="34" />
-              <folding>
-                <element signature="e#50#56#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Nav.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smms/src/components/Nav/Nav.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="115" column="34" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
+            <state relative-caret-position="125">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -83,15 +74,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Top.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smms/src/components/Top/Top.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="32" column="33" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -109,7 +91,6 @@
         <option value="$PROJECT_DIR$/smms/src/main.js" />
         <option value="$PROJECT_DIR$/smms/src/App.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/Login/Login.vue" />
-        <option value="$PROJECT_DIR$/smms/src/views/Home/Home.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/AccountManage/AccountManage.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/AccountAdd/AccountAdd.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/ManageAccount/ManageAccount.vue" />
@@ -127,10 +108,11 @@
         <option value="$PROJECT_DIR$/smms/src/views/InventoryAdd/InventoryAdd.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/GoodsAdd/GoodsAdd.vue" />
         <option value="$PROJECT_DIR$/smms/src/router.js" />
-        <option value="$PROJECT_DIR$/smms/src/components/Top/Top.vue" />
         <option value="$PROJECT_DIR$/smms/src/components/Nav/Nav.vue" />
-        <option value="$PROJECT_DIR$/smms/src/components/Footer/Footer.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/Index/Index.vue" />
+        <option value="$PROJECT_DIR$/smms/src/components/Footer/Footer.vue" />
+        <option value="$PROJECT_DIR$/smms/src/components/Top/Top.vue" />
+        <option value="$PROJECT_DIR$/smms/src/views/Home/Home.vue" />
       </list>
     </option>
   </component>
@@ -231,7 +213,15 @@
               <item name="smms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Login" type="462c0819:PsiDirectoryNode" />
+              <item name="Home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="smms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Index" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,12 +274,12 @@
       <workItem from="1548770719052" duration="6427000" />
       <workItem from="1548809126170" duration="12162000" />
       <workItem from="1548947326008" duration="6727000" />
-      <workItem from="1549101437800" duration="7299000" />
+      <workItem from="1549101437800" duration="9467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32615000" />
+    <option name="totallyTimeSpent" value="34783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -352,9 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#643#686#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -468,13 +455,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/Home/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
@@ -559,23 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -586,17 +549,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/components/Top/Top.vue">
+    <entry file="file://$PROJECT_DIR$/smms/src/components/Footer/Footer.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/style/common.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="425">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding>
+            <element signature="e#50#56#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -607,23 +566,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/components/Footer/Footer.vue">
+    <entry file="file://$PROJECT_DIR$/smms/src/style/common.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="225">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding>
-            <element signature="e#50#56#1" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/components/Top/Top.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/Home/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/views/Index/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-          <folding>
-            <element signature="e#643#686#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
         </state>
       </provider>
     </entry>
