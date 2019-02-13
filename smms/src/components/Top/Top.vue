@@ -21,7 +21,7 @@
         data (){
             return {
                 user : {
-                    name : '李寻欢'
+                    name : '小可爱'
                 }
             }
         }
