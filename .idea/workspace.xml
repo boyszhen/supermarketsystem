@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="68975241-4ee3-45e4-8041-c61bc00044ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/components/Top/Top.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/components/Top/Top.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/PasswordModify/PasswordModify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/PasswordModify/PasswordModify.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smms/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,23 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smms/src/App.vue">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smms/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="100">
+              <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smms/src/main.js">
+      <file leaf-file-name="Index.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/smms/src/views/Index/Index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="350">
+              <caret line="14" selection-start-line="14" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -43,8 +42,8 @@
       <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smms/src/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="500">
+              <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -52,20 +51,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddAccountNum.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue">
+      <file leaf-file-name="SalesList.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="44" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PasswordModify.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/smms/src/views/PasswordModify/PasswordModify.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+            <state relative-caret-position="475">
+              <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+              <folding>
+                <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +82,6 @@
         <option value="$PROJECT_DIR$/smms/src/views/AddAccount/Home.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/PasswordModify/Home.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/IncomingStatistics/IncomingStatistics.vue" />
-        <option value="$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/InventoryManage/InventoryManage.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/GoodsReturn/GoodsReturn.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/GoodsGoOut/GoodsGoOut.vue" />
@@ -97,7 +89,6 @@
         <option value="$PROJECT_DIR$/smms/src/views/GoodsManage/GoodsManage.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/InventoryAdd/InventoryAdd.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/GoodsAdd/GoodsAdd.vue" />
-        <option value="$PROJECT_DIR$/smms/src/router.js" />
         <option value="$PROJECT_DIR$/smms/src/components/Nav/Nav.vue" />
         <option value="$PROJECT_DIR$/smms/src/components/Footer/Footer.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/Index/Index.vue" />
@@ -107,6 +98,8 @@
         <option value="$PROJECT_DIR$/smms/src/components/Top/Top.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue" />
         <option value="$PROJECT_DIR$/smms/src/views/PasswordModify/PasswordModify.vue" />
+        <option value="$PROJECT_DIR$/smms/src/router.js" />
+        <option value="$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue" />
       </list>
     </option>
   </component>
@@ -131,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,7 +161,7 @@
               <item name="smms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="AddAccountNum" type="462c0819:PsiDirectoryNode" />
+              <item name="GoodsAdd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
@@ -177,12 +169,45 @@
               <item name="smms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="PasswordModify" type="462c0819:PsiDirectoryNode" />
+              <item name="GoodsGoOut" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="smms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="GoodsManage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="smms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="GoodsReturn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="smms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
+              <item name="smms" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="SalesList" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,14 +220,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\Login" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\components\Top" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\PasswordModify" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\AddAccount" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\Login" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -234,14 +259,17 @@
       <workItem from="1549591350209" duration="10640000" />
       <workItem from="1549848851618" duration="10107000" />
       <workItem from="1549967043706" duration="640000" />
+      <workItem from="1550046836933" duration="1233000" />
+      <workItem from="1550124665610" duration="5857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56170000" />
+    <option name="totallyTimeSpent" value="63260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.153125" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -502,69 +530,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsReturn/GoodsReturn.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsGoOut/GoodsGoOut.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/views/SalesStatistics/SalesStatistics.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsManage/GoodsManage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/InventoryManage/InventoryManage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsAdd/GoodsAdd.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/Login/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1163">
-          <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,24 +551,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/style/common.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/Index/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -624,41 +579,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/router.js">
+    <entry file="file://$PROJECT_DIR$/smms/src/views/PasswordModify/PasswordModify.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="1850">
+          <caret line="74" column="54" lean-forward="true" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/ManageAccountNum/ManageAccountNum.vue">
+    <entry file="file://$PROJECT_DIR$/smms/src/views/Home/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1375">
-          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        <state relative-caret-position="575">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/Home/Home.vue">
+    <entry file="file://$PROJECT_DIR$/smms/src/views/Index/Index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        <state relative-caret-position="350">
+          <caret line="14" selection-start-line="14" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsManage/GoodsManage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-250">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsReturn/GoodsReturn.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsAdd/GoodsAdd.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/GoodsGoOut/GoodsGoOut.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="44" />
+        <state relative-caret-position="150">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smms/src/views/PasswordModify/PasswordModify.vue">
+    <entry file="file://$PROJECT_DIR$/smms/src/views/ManageAccountNum/ManageAccountNum.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        <state relative-caret-position="589">
+          <caret line="55" column="28" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/InventoryManage/InventoryManage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/Login/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="77" column="54" lean-forward="true" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smms/src/views/SalesList/SalesList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="76" column="18" lean-forward="true" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#el-table#0;n#el-card#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
