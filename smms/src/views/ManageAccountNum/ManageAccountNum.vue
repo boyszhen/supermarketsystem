@@ -1,10 +1,10 @@
 <template>
-    <div class="manageaccount">
-        <el-card class="box-card">
-            <div slot="header" class="clearfix">
-                <span>账号管理</span>
-            </div>
-            <div class="text item">
+  <div class="manageaccount">
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span>账号管理</span>
+      </div>
+      <div class="text item">
         <el-table ref="multipleTable" :data="accountTableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
           <el-table-column type="selection" width="55">
           </el-table-column>
@@ -20,7 +20,7 @@
               <el-button type="primary" size="mini" @click="handleEdit(scope.row.id)">
                 <i class="el-icon-edit"></i>
               </el-button>
-              <el-button size="mini" type="danger" @click="handleDelete( scope.row.id )">
+              <el-button size="mini" type="danger" @click="handleDelete(scope.row.id)">
                 <i class="el-icon-delete"></i>
               </el-button>
             </template>
@@ -60,14 +60,14 @@
 
         </el-dialog>
       </div>
-        </el-card>
-    </div>
+    </el-card>
+  </div>
 </template>
 <script>
 import moment from "moment";
 import qs from "qs";
-    export default {
-         data() {
+export default {
+  data() {
     return {
       accountTableData: [],
       flag: false,
@@ -88,19 +88,6 @@ import qs from "qs";
     this.getAccountListByPage();
   },
   methods: {
-    //请求所有账号的数据
-    // 请求所有账号数据的函数
-    // getAccountList() {
-    //   this.axios
-    //     .get("http://127.0.0.1:666/account/accountlist")
-    //     .then(response => {
-    //       // 把后端返回的账号数据 赋值给用户账号表格数据accountTableData
-    //       this.accountTableData = response.data;
-    //     })
-    //     .catch(err => {
-    //       console.log(err);
-    //     });
-    // },
     getAccountListByPage() {
       let pageSize = this.pageSize;
       let currentPage = this.currentPage;
@@ -125,14 +112,11 @@ import qs from "qs";
           console.log(err);
         });
     },
-    handleSelectionChange(val) {
-      this.multipleSelection = val;
-    },
     //修改数据的函数
     handleEdit(id) {
       //把修改的这一条id保存下来
       this.editId = id;
-     
+
       // 显示模态框
       this.flag = true;
       this.axios
@@ -140,10 +124,8 @@ import qs from "qs";
         .then(response => {
           let result = response.data[0];
           //回填数据
-          this.editForm.username = result.username,
-          this.editForm.usergroup = result.usergroup;
-
-          
+          (this.editForm.username = result.username),
+            (this.editForm.usergroup = result.usergroup);
         })
         .catch(err => {
           console.log(err);
@@ -161,7 +143,7 @@ import qs from "qs";
         this.axios
           .get(`http://127.0.0.1:666/account/accountdel?id=${id}`)
           .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             // 接收后端返回的错误码 和 提示信息
             let { error_code, reason } = response.data;
             // 根据后端响应的数据判断
@@ -172,7 +154,7 @@ import qs from "qs";
                 message: reason
               });
               //自动刷新获取数据
-              this.getAccountList();
+              this.getAccountListByPage();
             } else {
               // 弹出失败的提示
               this.$message.error(reason);
@@ -207,12 +189,11 @@ import qs from "qs";
             //自动刷新获取数据
             this.getAccountListByPage();
             //关闭模态框
-          this.flag = false
+            this.flag = false;
           } else {
             // 弹出失败的提示
             this.$message.error(reason);
           }
-          ;
         })
         .catch(err => {
           console.log(err);
@@ -294,15 +275,16 @@ import qs from "qs";
       return moment(ctime).format("YYYY-MM-DD HH:mm:ss");
     }
   }
-    }
+};
 </script>
 <style lang="less">
-    .manageaccount{
-        .el-icon-edit{
-            font-size: 20px;
-        }
-        .el-icon-info{
-            font-size: 20px;
-        }
-    }
+.manageaccount {
+  // .el-icon-edit {
+  //   font-size: 20px;
+  // }
+  // .el-icon-info {
+  //   font-size: 20px;
+  // }
+  
+}
 </style>

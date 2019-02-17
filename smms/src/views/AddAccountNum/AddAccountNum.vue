@@ -86,7 +86,6 @@ export default {
             pass: this.accountNum.pass,
             group: this.accountNum.group
           };
-          console.log(params)
           this.axios 
             .post(
               "http://127.0.0.1:666/account/accountadd",
