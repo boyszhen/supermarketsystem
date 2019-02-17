@@ -1,5 +1,5 @@
 <template>
-    <div class="instockadd">
+    <div class="instockadd"> 
         <el-card class="box-card">
             <div slot="header" class="clearfix">
                 <span>库存管理</span> 
@@ -9,6 +9,9 @@
                 <el-form :model="instockaddAddForm" status-icon :rules="rules" ref="instockaddAddForm" label-width="100px" class="demo-ruleForm">
                     <el-form-item label="商品条形码:" prop="producbarcode" class="max" placeholder="请输入条形码">
                         <el-input type="text" v-model="instockaddAddForm.producbarcode" autocomplete="off"></el-input>
+                    </el-form-item>
+                    <el-form-item label="商品名称:" prop="producbarcode" class="max" placeholder="请输入商品名称">
+                        <el-input type="text" v-model="instockaddAddForm.goodsname" autocomplete="off"></el-input>
                     </el-form-item>
                     <el-form-item label="数量：" prop="quantity" placeholder="记重商品单位为千克">
                         <el-input type="text" v-model="instockaddAddForm.quantity" autocomplete="off"></el-input>
