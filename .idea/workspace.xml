@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="68975241-4ee3-45e4-8041-c61bc00044ff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/server/routes/vip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/incoming.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/incoming.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/AccountAdd/AccountAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/AccountAdd/AccountAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/AccountManage/AccountManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/AccountManage/AccountManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/AddAccountNum/AddAccountNum.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/InventoryAdd/InventoryAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/InventoryAdd/InventoryAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/InventoryManage/InventoryManage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/InventoryManage/InventoryManage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smms/src/views/ManageAccountNum/ManageAccountNum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/smms/src/views/ManageAccountNum/ManageAccountNum.vue" afterDir="false" />
-    </list>
+    <list default="true" id="68975241-4ee3-45e4-8041-c61bc00044ff" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -53,7 +40,7 @@
       <file leaf-file-name="AccountManage.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smms/src/views/AccountManage/AccountManage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
+            <state relative-caret-position="4875">
               <caret line="253" lean-forward="true" selection-start-line="253" selection-end-line="253" />
               <folding>
                 <element signature="n#div#0;n#el-card#0;n#div#0;n#template#0;n#!!top" />
@@ -116,7 +103,7 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
     <handled-path value="$PROJECT_DIR$/smms/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-171" />
     <option name="y" value="3" />
     <option name="width" value="1450" />
@@ -163,22 +150,6 @@
               <item name="smms" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="smms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="AccountAdd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="supermarketsystem" type="462c0819:PsiDirectoryNode" />
-              <item name="smms" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="AccountManage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="supermarketsystem" type="b2602c69:ProjectViewProjectNode" />
@@ -270,14 +241,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\Login" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\超市管理系统\supermarketsystem\server\routes" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\components\Top" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\PasswordModify" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\AddAccount" />
       <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\H5前端\作业\超市管理系统\supermarketsystem\smms\src\views\Login" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -311,16 +283,15 @@
       <workItem from="1549967043706" duration="640000" />
       <workItem from="1550046836933" duration="1233000" />
       <workItem from="1550124665610" duration="5857000" />
-      <workItem from="1550460277350" duration="1492000" />
+      <workItem from="1550460277350" duration="1702000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64752000" />
+    <option name="totallyTimeSpent" value="64962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.153125" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -736,7 +707,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smms/src/views/AccountManage/AccountManage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
+        <state relative-caret-position="4875">
           <caret line="253" lean-forward="true" selection-start-line="253" selection-end-line="253" />
           <folding>
             <element signature="n#div#0;n#el-card#0;n#div#0;n#template#0;n#!!top" />
