@@ -102,7 +102,7 @@ export default new Router({
             {
                 path : '/goodsadd',
                 name : 'goodsadd',
-                component : ()=>import('./views/GoodsAdd/Goodsadd.vue')
+                component : ()=>import('./views/GoodsAdd/GoodsAdd.vue')
             }
         ]
       }

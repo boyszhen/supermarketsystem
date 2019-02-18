@@ -27,14 +27,14 @@
         <el-table ref="multipleTable" :data="instockTableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
           <el-table-column type="selection" width="55">
           </el-table-column>
-          <el-table-column prop="goodsbarcode" label="商品条形码">
+          <el-table-column prop="producbarcode" label="商品条形码">
           </el-table-column>
-          <el-table-column prop="goodsname" label="商品名称">
+          <el-table-column prop="goodname" label="商品名称">
           </el-table-column>
 
-          <el-table-column prop="price" label="进价(元)">
+          <el-table-column prop="purchaseprice" label="进价(元)">
           </el-table-column>
-          <el-table-column prop="storage" label="入库">
+          <el-table-column prop="storabge" label="入库">
           </el-table-column>
           <el-table-column prop="instock" label="库存">
           </el-table-column>
@@ -131,7 +131,7 @@ export default {
       let pageSize = this.pageSize;
       let currentPage = this.currentPage;
       this.axios
-        .get("http://127.0.0.1:666/incoming/accountlistbypage", {
+        .get("http://127.0.0.1:888/incoming/accountlistbypage", {
           // http://127.0.0.1:666/incoming/accountlistbypage 正确的
           // http://127.0.0.1:666/incomimg/accountlistbypage 错误的
           params: {
@@ -167,7 +167,7 @@ export default {
       // 显示模态框
       this.flag = true;
       this.axios
-        .get(`http://127.0.0.1:666/incoming/accountinstockedit?id=${id}`)
+        .get(`http://127.0.0.1:888/incoming/accountinstockedit?id=${id}`)
         .then(response => {
           let result = response.data[0];
           //回填数据
@@ -196,7 +196,7 @@ export default {
       //发送axios把新数据传给后端
       this.axios
         .post(
-          "http://127.0.0.1:666/incoming/saveeditaccountinstock",
+          "http://127.0.0.1:888/incoming/saveeditaccountinstock",
           qs.stringify(params)
         )
         .then(response => {
@@ -230,7 +230,7 @@ export default {
       }).then(() => {
         //发送ajax把id传给后端
         this.axios
-          .get(`http://127.0.0.1:666/incoming/accountinstockdel?id=${id}`)
+          .get(`http://127.0.0.1:888/incoming/accountinstockdel?id=${id}`)
           .then(response => {
             console.log(response.data);
             // 接收后端返回的错误码 和 提示信息
@@ -272,7 +272,7 @@ export default {
         .then(() => {
           //发送axios把收集的id传给后端
           this.axios
-            .get(`http://127.0.0.1:666/incoming/batchdelete`, {
+            .get(`http://127.0.0.1:888/incoming/batchdelete`, {
               params: {
                 selectId
               }
