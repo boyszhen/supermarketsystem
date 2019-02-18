@@ -1,5 +1,5 @@
 <template>
-    <div class="top">
+    <div class="top"> 
         <div class="topBox">
             <div class="title">
                 <i class="el-icon-menu"></i>

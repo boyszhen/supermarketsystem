@@ -26,7 +26,7 @@ router.post('/incomingadd', (req, res) => {
     }
   })
 })
-////显示账号列表路由
+//显示库存
 router.get('/accountinstocklist', (req, res) => {
   // 查询所有账号数据(按照时间排序)
   // 构造查询所有用户数据的sql语句
@@ -58,7 +58,7 @@ router.get('/accountinstockdel', (req, res) => {
     }
   })
 })
-//修改账号路由
+//修改库存路由
 router.get('/accountinstockedit', (req, res) => {
   // 接收id 
   let { id } = req.query;

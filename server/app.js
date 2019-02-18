@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var accountRouter = require('./routes/account');
+var loginRouter = require('./routes/login');
 //进货管理
 var incomingRouter = require('./routes/incoming')
 
@@ -26,6 +27,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/account', accountRouter);
 app.use('/incoming',incomingRouter);
+app.use('/login',loginRouter);
 
 
 // catch 404 and forward to error handler
