@@ -9,7 +9,7 @@
                 搜索:
                 <el-input placeholder="请输入会员卡，会员名，电话手机" width="300px"></el-input>
                 <el-button type="success" size="mini">查询</el-button>
-                <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
+                <el-table  :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
                     <el-table-column type="selection" width="55">
                     </el-table-column>
                     <el-table-column prop="vipnumber" label="会员卡卡号">
@@ -38,6 +38,15 @@
                         </template>
                     </el-table-column>
                 </el-table>
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :current-page="currentPage"
+                        :page-sizes="[1, 3, 5, 10]"
+                        :page-size="pageSize"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="total">
+                </el-pagination>
                 <el-button type="danger" @click="batchDelete">批量删除</el-button>
                 <el-dialog title="修改会员信息" :visible.sync="flag">
                     <el-form :model="form">
@@ -67,8 +76,7 @@
                         <el-button type="primary" @click="saveVipEdit">确 定</el-button>
                     </div>
                 </el-dialog>
-                <el-pagination background layout="prev, pager, next" :total="1000">
-                </el-pagination>
+
             </div>
         </el-card>
     </div>
@@ -91,25 +99,62 @@
                 },
                 formLabelWidth : "120px",
                 //批量删除id
-                batchId : []
+                batchId : [],
+                currentPage : 1,
+                pageSize : 3,
+                total : 0
+
             };
         },
         created (){
-            this.getVipList();
+            this.getVipListByPage();
         },
         methods: {
             //获取会员列表数据
-            getVipList (){
-                this.axios.get("http://127.0.0.1:888/vip/viplist")
-                    .then(response =>{
-                        this.tableData = response.data;
-                    })
-                    .catch(err=> {
+            // getVipList (){
+            //     this.axios.get("http://127.0.0.1:888/vip/viplist")
+            //         .then(response =>{
+            //             this.tableData = response.data;
+            //         })
+            //         .catch(err=> {
+            //
+            //         })
+            // },
+            //根据页码和每页数据条数获取数据函数
+            getVipListByPage(){
+                //发送数据给后端
+                this.axios.get("http://127.0.0.1:888/vip/vipByPage",{
+                    params : {
+                        currentPage : this.currentPage,
+                        pageSize : this.pageSize
+                    }
+                })
+                    .then(response => {
+                        let {total,data} = response.data;
+                        this.total = total;
+                        this.tableData = data;
+                        if (!data.length && this.currentPage !== 1){
+                            this.currentPage -= 1;
+                            this.getVipListByPage();
+                        }
 
+                    })
+                    .catch(err => {
+                        if (err) throw err;
                     })
             },
             handleSelectionChange(val) {
                 this.batchId = val;
+            },
+            // 每页条数改变
+            handleSizeChange(val) {
+                this.pageSize = val;
+                this.getVipListByPage();
+            },
+            //页码改变
+            handleCurrentChange(val) {
+                this.currentPage = val;
+                this.getVipListByPage();
             },
             //删除会员函数
             vipDelete (id) {
@@ -126,7 +171,7 @@
                                     type: 'success',
                                     message: reason
                                 });
-                                this.getVipList();
+                                this.getVipListByPage();
                             } else {
                                 this.$message.error(reason)
                             }
@@ -176,7 +221,7 @@
                                 type : "success",
                                 message : reason
                             });
-                            this.getVipList();
+                            this.getVipListByPage();
                             this.flag = false;
                         } else {
                             this.$message.error(reason);
@@ -189,24 +234,42 @@
             //批量删除函数
             batchDelete (){
                 let selectId = this.batchId.map(item => item.id);
-                if (selectId.length>0){
-                    this.axios.get(`http://127.0.0.1:888/vip/batchdelete?id=${selectId}`)
-                        .then(response => {
-                            let {err_code,reason} = response.data;
-                            if (err_code === 0){
-                                this.$message({
-                                    type : "success",
-                                    message : reason
-                                });
-                                this.getVipList();
-                            } else {
-                                this.$message.error(reason);
-                            }
-                        })
-                        .catch(err => {
-                            if (err) throw err
+                if (selectId.length>0) {
+                    this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).then(() => {
+                        this.axios.get(`http://127.0.0.1:888/vip/batchdelete?id=${selectId}`)
+                            .then(response => {
+                                let {err_code, reason} = response.data;
+                                if (err_code === 0) {
+                                    this.$message({
+                                        type: "success",
+                                        message: reason
+                                    });
+                                    this.getVipListByPage();
+                                } else {
+                                    this.$message.error(reason);
+                                }
+                            })
+                            .catch(err => {
+                                if (err) throw err
+                            });
+                        this.$message({
+                            type: 'success',
+                            message: '删除成功!'
                         });
+                    }).catch(() => {
+                        this.$message({
+                            type: 'info',
+                            message: '已取消删除'
+                        });
+                    });
+                }else {
+                    this.$message.error("请选择后操作")
                 }
+
 
             }
 
@@ -236,6 +299,20 @@
                     }
                     .el-button--danger{
                         margin-top: 20px;
+                    }
+                    .el-pagination{
+                        .el-pagination__sizes{
+                            .el-select{
+                                .el-input{
+                                    width: 100px;
+                                }
+                            }
+                        }
+                        .el-pagination__jump{
+                            .el-input{
+                                width: 40px;
+                            }
+                        }
                     }
                 }
             }

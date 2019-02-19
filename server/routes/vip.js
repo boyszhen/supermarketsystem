@@ -25,13 +25,33 @@ router.post('/vipadd',(req,res)=>{
 });
 
 //会员列表  路由
-router.get('/viplist',(req,res) => {
+// router.get('/viplist',(req,res) => {
+// //     //构造sql
+// //     let sqlStr = `select * from vip order by id desc`;
+// //     //执行sql
+// //     connection.query(sqlStr,(err,data)=>{
+// //        if (err) throw err;
+// //        res.send(data)
+// //     });
+// // });
+
+//分页会员列表  路由
+router.get('/vipByPage',(req,res)=>{
+    let { currentPage,pageSize } = req.query;
+    currentPage = currentPage ? currentPage : 1;
+    pageSize = pageSize ? pageSize : 3;
     //构造sql
     let sqlStr = `select * from vip order by id desc`;
-    //执行sql
     connection.query(sqlStr,(err,data)=>{
        if (err) throw err;
-       res.send(data)
+       let total = data.length;
+        //跳过多少条
+        let n = (currentPage - 1) * pageSize;
+        sqlStr += ` limit ${n},${pageSize}`;
+        connection.query(sqlStr,(err,data)=>{
+           if (err) throw err;
+           res.send({total,data});
+        });
     });
 });
 

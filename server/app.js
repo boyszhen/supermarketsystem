@@ -11,6 +11,8 @@ var accountRouter = require('./routes/account');
 var incomingRouter = require('./routes/incoming')
 //会员管理
 var vipRouter = require('./routes/vip');
+//商品管理
+var goodRouter = require('./routes/good');
 
 var app = express();
 
@@ -29,6 +31,7 @@ app.use('/users', usersRouter);
 app.use('/account', accountRouter);
 app.use('/incoming',incomingRouter);
 app.use('/vip',vipRouter);
+app.use('/goods',goodRouter);
 
 
 // catch 404 and forward to error handler

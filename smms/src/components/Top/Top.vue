@@ -1,68 +1,74 @@
 <template>
     <div class="top">
-        <div class="topBox">
-            <div class="title">
-                <i class="el-icon-menu"></i>
-                <span>华联超市管理系统</span>
-            </div>
-        </div>
-        <div class="contentBox">
-            <span>欢迎您 </span>
-            <span class="username">{{ user.name }}</span>
-        </div>
-        <div class="viaBox">
-            <img src="./via.jpg" alt="" class="img">
-        </div>
-
+        <el-row>
+            <el-col :span="12" class="title">
+                <i class="el-icon-menu"></i> 华联超市管理系统
+            </el-col>
+            <el-col :span="12" class="welcome">
+                <el-row>
+                    <el-col :span="18">
+                        欢迎您!
+                        <el-dropdown>
+                            <span class="username el-dropdown-link">
+                                {{ username }}<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>个人中心</el-dropdown-item>
+                                <el-dropdown-item>退出</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </el-col>
+                    <el-col :span="6">
+                        <div class="avatar">
+                            <img width="100%" height="100%" src="./via.jpg" alt="">
+                        </div>
+                    </el-col>
+                </el-row>
+            </el-col>
+        </el-row>
     </div>
 </template>
 <script>
     export default {
         data (){
             return {
-                user : {
-                    name : '小可爱'
-                }
+                username : "李寻欢"
             }
         }
     }
 </script>
 <style lang="less">
     .top{
-        padding: 0;
-        background-color: #242f42;
-        height: 60px;
         color: #fff;
-        .topBox{
-            float: left;
+        line-height: 60px;
+        .el-row{
             .title{
                 font-size: 22px;
-                line-height: 60px;
-                margin-left: 50px;
-                letter-spacing: 20px;
+                letter-spacing: 5px;
             }
-        }
-        .contentBox{
-            float: left;
-            height: 60px;
-            line-height: 60px;
-            margin-left: 1200px;
-            .username{
-                font-size: 18px;
-            }
-        }
-        .viaBox{
-            display:inline-block;
-            margin-top: 5px;
-            margin-left: 10px;
-            height: 50px;
-            width: 50px;
-            .img{
-                height: 100%;
-                width: 100%;
-                border-radius:50%;
-            }
-        }
+            .welcome{
+                text-align: right;
+                .el-row{
+                    .el-col{
+                        .el-dropdown{
+                            .username{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
 
+                .avatar {
+                    width: 52px;
+                    height: 52px;
+                    margin-top: 4px;
+                    margin-left: 30px;
+                    border-radius: 50%;
+                    img {
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
     }
 </style>

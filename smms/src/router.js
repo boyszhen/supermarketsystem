@@ -96,7 +96,7 @@ export default new Router({
             {
                 path : '/goodsmanage',
                 name : 'goodsmanage',
-                component : ()=>import('./views/AccountManage/AccountManage.vue')
+                component : ()=>import('./views/GoodsManage/GoodsManage.vue')
             },
             //添加商品
             {
