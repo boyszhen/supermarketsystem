@@ -140,7 +140,16 @@ export default {
                    //发送请求
                     this.axios.post("http://127.0.0.1:888/goods/goodsadd",qs.stringify(params))
                         .then(response => {
-                            console.log(response.data)
+                            let {err_code,reason} = response.data;
+                            if (err_code === 0){
+                                this.$message({
+                                    type : "success",
+                                    message : reason
+                                });
+                                this.$router.push('/goodsmanage');
+                            }else {
+                                this.$message.error(reason);
+                            }
                         })
                         .catch(err => {
                             if (err) throw err
