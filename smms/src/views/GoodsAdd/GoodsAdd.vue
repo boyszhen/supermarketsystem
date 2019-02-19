@@ -6,7 +6,7 @@
 
       </div>
       <div class="text item">
-        <el-form :model="goodsAddForm" status-icon :rules="rules" ref="vipnumAddForm" label-width="100px" class="demo-ruleForm">
+        <el-form :model="goodsAddForm" status-icon :rules="rules" ref="goodsAddForm" label-width="100px" class="demo-ruleForm">
           <el-form-item label="所属分类：" prop="classification">
             <el-select v-model="goodsAddForm.classification" placeholder="--请选择分类--">
               <el-option label="烟酒" value="烟酒"></el-option>
@@ -23,11 +23,11 @@
           <el-form-item label="商品名称：" prop="goodsname" class="max">
             <el-input type="text" v-model="goodsAddForm.goodsname" autocomplete="off" placeholder="请输入商品名称"></el-input>
           </el-form-item>
-          <el-form-item label="商品售价：" prop="goodsprice" class="mini">
-            <el-input type="text" v-model="goodsAddForm.goodsprice" autocomplete="off" placeholder="商品售价"></el-input>
+          <el-form-item label="商品售价：" prop="saleprice" class="mini">
+            <el-input type="text" v-model="goodsAddForm.saleprice" autocomplete="off" placeholder="商品售价"></el-input>
           </el-form-item>
-          <el-form-item label="市场价：" prop="markeprice" class="mini">
-            <el-input type="text" v-model="goodsAddForm.markeprice" autocomplete="off" placeholder="市场价"></el-input>
+          <el-form-item label="市场价：" prop="marketprice" class="mini">
+            <el-input type="text" v-model="goodsAddForm.marketprice" autocomplete="off" placeholder="市场价"></el-input>
           </el-form-item>
           <el-form-item label="商品进价：" prop="goodspurchase" class="mini">
             <el-input type="text" v-model="goodsAddForm.goodspurchase" autocomplete="off" placeholder="商品进价"></el-input>
@@ -47,8 +47,8 @@
               <el-radio :label="2">不享受</el-radio>
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="是否促销：" prop="ispromot">
-            <el-radio-group v-model="goodsAddForm.ispromot">
+          <el-form-item label="是否促销：" prop="ispromo">
+            <el-radio-group v-model="goodsAddForm.ispromotion">
               <el-radio :label="1">启用</el-radio>
               <el-radio :label="2">禁用</el-radio>
             </el-radio-group>
@@ -58,7 +58,7 @@
             </el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="success" size="mini">添加</el-button>
+            <el-button type="success" size="mini" @click="submitForm('goodsAddForm')">添加</el-button>
           </el-form-item>
         </el-form>
        
@@ -67,6 +67,7 @@
   </div>
 </template>
 <script>
+  import qs from "qs";
 export default {
   data() {
     return {
@@ -74,33 +75,83 @@ export default {
         classification: "",
         productbarcode: "",
         goodsname: "",
-        goodsprice: "",
-        markeprice: "",
+          saleprice: "",
+        marketprice: "",
         goodspurchase: "",
         warehnumber: "",
         goodsweight: "",
         goodsunit: "",
         memberdiscount: "",
-        ispromo: "",
+          ispromotion: "",
         productdiscription: ""
       },
-
       rules: {
         classification: [
-          { required: true, message: "请选择商品种类", trigger: "change" }
+          { required: true, message: "请选择商品种类", trigger: "blur" }
         ],
         productbarcode: [
-          { required: true, message: "请输入商品条形码", trigger: "change" }
+          { required: true, message: "请输入商品条形码", trigger: "blur" }
         ],
         goodsname: [
-          { required: true, message: "请输入商品名称", trigger: "change" }
+          { required: true, message: "请输入商品名称", trigger: "blur" }
         ],
-        goodsprice: [
-          { required: true, message: "请输入商品售价", trigger: "change" }
-        ]
+          saleprice: [
+          { required: true, message: "请输入商品售价", trigger: "blur" }
+        ],
+          marketprice : [
+              {required : true,message : "请输入市场价",trigger : "blur"}
+          ],
+          warehnumber : [
+              {required : true ,message : "请输入数量",trigger : "blur"}
+          ]
       }
     };
-  }
+  },
+    methods : {
+        submitForm(formName) {
+            this.$refs[formName].validate((valid) => {
+                if (valid) {
+                    let stockprice = Number(this.goodsAddForm.warehnumber) * Number(this.goodsAddForm.saleprice);
+                    //是否促销
+                    let ispromotion = "";
+                    if (this.goodsAddForm.ispromotion === 1){
+                        ispromotion = "促销"
+                    }else{
+                        ispromotion = "未促销"
+                    }
+                   let params = {
+                        //条形码
+                       goodbarcode : this.goodsAddForm.productbarcode,
+                       //商品名称
+                       goodname : this.goodsAddForm.goodsname,
+                       //商品类别
+                       goodclass : this.goodsAddForm.classification,
+                       //售价
+                       saleprice : this.goodsAddForm.saleprice,
+                       // 市场价格
+                       marketprice: this.goodsAddForm.marketprice,
+                       //入库数量
+                       instock:this.goodsAddForm.warehnumber,
+                       //库存总额
+                       stockprice,
+                       //是否促销
+                       ispromotion
+                   };
+                   //发送请求
+                    this.axios.post("http://127.0.0.1:888/goods/goodsadd",qs.stringify(params))
+                        .then(response => {
+                            console.log(response.data)
+                        })
+                        .catch(err => {
+                            if (err) throw err
+                        })
+                } else {
+                    console.log('error submit!!');
+                    return false;
+                }
+            });
+        }
+    }
 };
 </script>
 <style lang="less">

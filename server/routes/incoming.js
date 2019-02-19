@@ -1,19 +1,19 @@
 const express = require('express'); 
 const router = express.Router();
-const connection = require('./connect')
+const connection = require('./connect');
 
 //设置请求头解决跨域 
 router.all('*', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Origin', '*');
   next();
-})
+});
 //添加库存
 router.post('/incomingadd', (req, res) => {
-  let { producbarcode, goodname, purchaseprice, storabge, instock, sold } = req.body
+  let { producbarcode, goodname, purchaseprice, storabge, instock, sold } = req.body;
   //把数据存入数据库
   //构造添加账号的sql语句
   const sqlStr = `insert into incoming(producbarcode,goodname,purchaseprice,storabge,instock,sold) values('${producbarcode}', '${goodname}', '${purchaseprice}', '${storabge}', '${instock}', '${sold}')`;
-  console.log(sqlStr)
+  console.log(sqlStr);
   connection.query(sqlStr, (err, data) => {
     if (err) throw err;
     // 判断受影响的行数

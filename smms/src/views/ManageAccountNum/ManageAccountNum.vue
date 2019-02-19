@@ -92,7 +92,7 @@ export default {
       let pageSize = this.pageSize;
       let currentPage = this.currentPage;
       this.axios
-        .get("http://127.0.0.1:666/account/accountlistbypage", {
+        .get("http://127.0.0.1:888/account/accountlistbypage", {
           params: {
             pageSize,
             currentPage
@@ -120,11 +120,11 @@ export default {
       // 显示模态框
       this.flag = true;
       this.axios
-        .get(`http://127.0.0.1:666/account/accountedit?id=${id}`)
+        .get(`http://127.0.0.1:888/account/accountedit?id=${id}`)
         .then(response => {
           let result = response.data[0];
           //回填数据
-          (this.editForm.username = result.username),
+          (this.editForm.username = result.username);
             (this.editForm.usergroup = result.usergroup);
         })
         .catch(err => {
@@ -141,7 +141,7 @@ export default {
       }).then(() => {
         //发送ajax把id传给后端
         this.axios
-          .get(`http://127.0.0.1:666/account/accountdel?id=${id}`)
+          .get(`http://127.0.0.1:888/account/accountdel?id=${id}`)
           .then(response => {
             // console.log(response.data);
             // 接收后端返回的错误码 和 提示信息
@@ -174,7 +174,7 @@ export default {
       //发送axios把新数据传给后端
       this.axios
         .post(
-          "http://127.0.0.1:666/account/saveeditaccount",
+          "http://127.0.0.1:888/account/saveeditaccount",
           qs.stringify(params)
         )
         .then(response => {
@@ -236,7 +236,7 @@ export default {
         .then(() => {
           //发送axios把收集的id传给后端
           this.axios
-            .get(`http://127.0.0.1:666/account/batchdelete`, {
+            .get(`http://127.0.0.1:888/account/batchdelete`, {
               params: {
                 selectId
               }

@@ -96,13 +96,13 @@ export default new Router({
             {
                 path : '/goodsmanage',
                 name : 'goodsmanage',
-                component : ()=>import('./views/AccountManage/AccountManage.vue')
+                component : ()=>import('./views/GoodsManage/GoodsManage.vue')
             },
             //添加商品
             {
                 path : '/goodsadd',
                 name : 'goodsadd',
-                component : ()=>import('./views/GoodsAdd/Goodsadd.vue')
+                component : ()=>import('./views/GoodsAdd/GoodsAdd.vue')
             }
         ]
       }

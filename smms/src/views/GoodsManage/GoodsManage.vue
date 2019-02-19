@@ -5,7 +5,6 @@
         <span>商品管理</span>
       </div>
       <div class="text item">
-
         <el-form :inline="true" :model="goodsmanage" class="demo-form-inline" label-position="left">
           <el-form-item>
             <el-select v-model="goodsmanage.categories" placeholder="--请选择分类--" label-width="50px">
@@ -27,23 +26,23 @@
         <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
           <el-table-column type="selection" width="55">
           </el-table-column>
-          <el-table-column prop="goodsbarcode" label="商品条形码">
+          <el-table-column prop="goodbarcode" label="商品条形码">
           </el-table-column>
-          <el-table-column prop="goodsname" label="商品名称">
+          <el-table-column prop="goodname" label="商品名称">
           </el-table-column>
-          <el-table-column prop="classification" label="所属分类">
+          <el-table-column prop="goodclass" label="所属分类">
           </el-table-column>
-          <el-table-column prop="price" label="售价(元)">
+          <el-table-column prop="saleprice" label="售价(元)">
           </el-table-column>
-          <el-table-column prop="saleprice" label="促销价(元)">
+          <el-table-column prop="ispromotion" label="促销">
           </el-table-column>
           <el-table-column prop="marketprice" label="市场价(元)">
           </el-table-column>
           <el-table-column prop="instock" label="库存">
           </el-table-column>
-          <el-table-column prop="totalinven" label="库存总额(元)">
+          <el-table-column prop="stockprice" label="库存总额(元)">
           </el-table-column>
-          <el-table-column prop="totalsales" label="销售总额(元)">
+          <el-table-column prop="saletotalprice" label="销售总额(元)">
           </el-table-column>
           <el-table-column label="管理">
             <template slot-scope="scope">
@@ -63,118 +62,63 @@
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      goodsmanage: {
-        categories: "",
-        serch: ""
-      },
-      tableData: [
-        {
-          goodsbarcode: "6900452177",
-          goodsname: "我的优乐美",
-          classification: "饮料",
-          price: "3.50",
-          saleprice: "未促销",
-          marketprice: "4.00",
-          instock: "0(缺)",
-          totalinven: "0",
-          totalsales: "435.60"
+    export default {
+        data() {
+            return {
+                goodsmanage: {
+                    categories: "",
+                    serch: ""
+                },
+                tableData: []
+            };
         },
-        {
-          goodsbarcode: "6900543754",
-          goodsname: "龙凤呈祥",
-          classification: "烟酒",
-          price: "35",
-          saleprice: "未促销",
-          marketprice: "36",
-          instock: "20",
-          totalinven: "4500",
-          totalsales: "6787"
+        created (){
+            this.getGoodsList();
         },
-        {
-          goodsbarcode: "6900436974",
-          goodsname: "茅台",
-          classification: "烟酒",
-          price: "875",
-          saleprice: "845",
-          marketprice: "888",
-          instock: "68",
-          totalinven: "64378",
-          totalsales: "65439"
-        },
-        {
-          goodsbarcode: "6900542961",
-          goodsname: "旺仔牛奶",
-          classification: "饮料",
-          price: "3.50",
-          saleprice: "未促销",
-          marketprice: "4.00",
-          instock: "0(缺)",
-          totalinven: "0",
-          totalsales: "435.60"
-        },
-        {
-          goodsbarcode: "6900328652",
-          goodsname: "冰红茶",
-          classification: "饮料",
-          price: "3.50",
-          saleprice: "未促销",
-          marketprice: "4.00",
-          instock: "0(缺)",
-          totalinven: "0",
-          totalsales: "435.60"
-        },
-        {
-          goodsbarcode: "6900532853",
-          goodsname: "脉动",
-          classification: "饮料",
-          price: "3.50",
-          saleprice: "未促销",
-          marketprice: "4.00",
-          instock: "0(缺)",
-          totalinven: "0",
-          totalsales: "435.60"
+        methods: {
+            getGoodsList(){
+                this.axios.get("http://127.0.0.1:888/goods/goodslist")
+                    .then(response => {
+                        this.tableData = response.data
+                    })
+                    .catch(err => {
+                        if (err) throw err
+                    })
+            },
+            onSubmit() {
+                console.log("submit!");
+            },
+            handleSelectionChange(val) {
+                this.multipleSelection = val;
+            },
+            handleEdit() {},
+            handleDelete() {}
         }
-      ]
     };
-  },
-  methods: {
-    onSubmit() {
-      console.log("submit!");
-    },
-    handleSelectionChange(val) {
-      this.multipleSelection = val;
-    },
-    handleEdit() {},
-    handleDelete() {}
-  }
-};
 </script>
 <style lang="less">
-.goodsmanage {
-  .el-card {
-    .el-card__header {
-      text-align: left;
-      font-size: 20px;
-      font-weight: 600;
-      background: #f1f1f1;
-    }
-    .el-card__body {
-      .text {
-        .el-pagination {
-          margin-top: 30px;
-        }
-        .el-form {
-          margin-left: -600px;
-          .el-form-item {
-            .el-form-item__content {
-              .el-select {
-                .el-input {
-                  .el-input__inner {
-                    text-align: center;
-                    width: 150px;
+  .goodsmanage {
+    .el-card {
+      .el-card__header {
+        text-align: left;
+        font-size: 20px;
+        font-weight: 600;
+        background: #f1f1f1;
+      }
+      .el-card__body {
+        .text {
+          .el-pagination {
+            margin-top: 30px;
+          }
+          .el-form {
+            .el-form-item {
+              .el-form-item__content {
+                .el-select {
+                  .el-input {
+                    .el-input__inner {
+                      text-align: center;
+                      width: 150px;
+                    }
                   }
                 }
               }
@@ -184,5 +128,4 @@ export default {
       }
     }
   }
-}
 </style>
