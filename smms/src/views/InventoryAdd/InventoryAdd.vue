@@ -1,37 +1,37 @@
-<template> 
-    <div class="instockadd"> 
-        <el-card class="box-card">
-            <div slot="header" class="clearfix">
-                <span>库存管理</span> 
+<template>
+  <div class="instockadd">
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span>库存管理</span>
 
-            </div>
-            <div class="text item">
-                <el-form :model="instockaddAddForm" status-icon :rules="rules" ref="instockaddAddForm" label-width="100px" class="demo-ruleForm">
-                    <el-form-item label="商品条形码:" prop="producbarcode" class="max">
-                        <el-input type="text" v-model="instockaddAddForm.producbarcode" autocomplete="off" placeholder="请输入条形码"></el-input>
-                    </el-form-item>
-                    <el-form-item label="商品名称:" prop="goodname" class="max" placeholder="请输入商品名称">
-                        <el-input type="text" v-model="instockaddAddForm.goodname" autocomplete="off" placeholder="请输入商品名称"></el-input>
-                    </el-form-item> 
-                    <el-form-item label="进价：" prop="purchaseprice">
-                        <el-input type="text" v-model="instockaddAddForm.purchaseprice" autocomplete="off" placeholder="请输入进价"></el-input>
-                    </el-form-item>
-                    <el-form-item label="入库：" prop="storabge">
-                        <el-input type="text" v-model="instockaddAddForm.storabge" autocomplete="off" placeholder="请输入入库数量"></el-input>
-                    </el-form-item>
-                     <el-form-item label="库存：" prop="instock">
-                        <el-input type="text" v-model="instockaddAddForm.instock" autocomplete="off" placeholder="请输入库存数量"></el-input>
-                    </el-form-item>
-                     <el-form-item label="已售：" prop="sold">
-                        <el-input type="text" v-model="instockaddAddForm.sold" autocomplete="off" placeholder="请输入已输入数量"></el-input>
-                    </el-form-item>
-                    <el-form-item>
-                        <el-button type="primary" @click="submitForm('instockaddAddForm')">添加</el-button>
-                    </el-form-item>
-                </el-form>
-            </div> 
-        </el-card>
-    </div>
+      </div>
+      <div class="text item">
+        <el-form :model="instockaddAddForm" status-icon :rules="rules" ref="instockaddAddForm" label-width="100px" class="demo-ruleForm">
+          <el-form-item label="商品条形码:" prop="producbarcode" class="max">
+            <el-input type="text" v-model="instockaddAddForm.producbarcode" autocomplete="off" placeholder="请输入条形码"></el-input>
+          </el-form-item>
+          <el-form-item label="商品名称:" prop="goodname" class="max" placeholder="请输入商品名称">
+            <el-input type="text" v-model="instockaddAddForm.goodname" autocomplete="off" placeholder="请输入商品名称"></el-input>
+          </el-form-item>
+          <el-form-item label="进价：" prop="purchaseprice">
+            <el-input type="text" v-model="instockaddAddForm.purchaseprice" autocomplete="off" placeholder="请输入进价"></el-input>
+          </el-form-item>
+          <el-form-item label="入库：" prop="storabge">
+            <el-input type="text" v-model="instockaddAddForm.storabge" autocomplete="off" placeholder="请输入入库数量"></el-input>
+          </el-form-item>
+          <el-form-item label="库存：" prop="instock">
+            <el-input type="text" v-model="instockaddAddForm.instock" autocomplete="off" placeholder="请输入库存数量"></el-input>
+          </el-form-item>
+          <el-form-item label="已售：" prop="sold">
+            <el-input type="text" v-model="instockaddAddForm.sold" autocomplete="off" placeholder="请输入已输入数量"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="submitForm('instockaddAddForm')">添加</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+    </el-card>
+  </div>
 </template>
 <script>
 import moment from "moment";
@@ -41,14 +41,11 @@ export default {
     return {
       instockaddAddForm: {
         producbarcode: "",
-        goodname:"",
+        goodname: "",
         purchaseprice: "",
-        storabge:"",
-        instock:"",
-        sold:""
-
-
-
+        storabge: "",
+        instock: "",
+        sold: ""
       },
       rules: {
         producbarcode: [
@@ -66,13 +63,11 @@ export default {
         instock: [
           { required: true, message: "请输入库存数量", trigger: "blur" }
         ],
-        sold: [
-          { required: true, message: "请输入已售数量", trigger: "blur" }
-        ],
+        sold: [{ required: true, message: "请输入已售数量", trigger: "blur" }]
       }
     };
   },
-   methods: {
+  methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
@@ -82,9 +77,9 @@ export default {
             purchaseprice: this.instockaddAddForm.purchaseprice,
             storabge: this.instockaddAddForm.storabge,
             instock: this.instockaddAddForm.instock,
-            sold: this.instockaddAddForm.sold            
+            sold: this.instockaddAddForm.sold
           };
-          this.axios 
+          this.axios
             .post(
               "http://127.0.0.1:888/incoming/incomingadd",
               qs.stringify(params)
@@ -101,7 +96,6 @@ export default {
                 });
                 // 跳转到账号管理列表
                 this.$router.push("/inventorymanage");
-               
               } else {
                 // 弹出失败的提示
                 this.$message.error(reason);
@@ -159,8 +153,8 @@ export default {
                 line-height: 40px;
               }
             }
-            .el-button{
-                // margin-left: -260px;
+            .el-button {
+              // margin-left: -260px;
             }
           }
         }

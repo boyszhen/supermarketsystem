@@ -62,7 +62,7 @@
           </el-pagination>
         </div>
         <!--弹出模态框-->
-        <el-dialog title="修改账号" :visible.sync="flag" width="700px">
+        <el-dialog title="修改商品信息" :visible.sync="flag" width="700px">
           <el-form :model="instockaddAddForm" label-width="60px">
             <!-- 账号 -->
             <el-form-item label="商品条形码:" prop="producbarcode">
@@ -133,7 +133,7 @@ export default {
       this.axios
         .get("http://127.0.0.1:888/incoming/accountlistbypage", {
           // http://127.0.0.1:666/incoming/accountlistbypage 正确的
-          // http://127.0.0.1:666/incomimg/accountlistbypage 错误的
+          // http://127.0.0.1:666/incoming/accountlistbypage 错误的
           params: {
             pageSize,
             currentPage
@@ -192,7 +192,7 @@ export default {
         sold: this.instockaddAddForm.sold,
         editId: this.editId
       };
-      console.log(params);
+      // console.log(params);
       //发送axios把新数据传给后端
       this.axios
         .post(

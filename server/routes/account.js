@@ -103,7 +103,7 @@ router.get('/batchdelete',(req,res)=>{
       res.send({ "error_code": 1, "reason": "修改数据失败" });
     }
   })
-})
+}) 
 //按分页显示数据
 router.get('/accountlistbypage',(req,res)=>{
    // 接收前端参数
@@ -129,6 +129,47 @@ router.get('/accountlistbypage',(req,res)=>{
         data
       })
     })
+  })
+})
+//验证老密码的路由
+router.get('/checkoldpasword',(req,res)=>{
+  //接收传来的数据
+  let {oldPass,username}=req.query
+  //构造sql
+  const sqlStr = `select * from account where username='${username}' and password='${oldPass}'`;
+  connection.query(sqlStr, (err, data) => {
+    if (err) throw err;
+    if (data.length) { // 如果查询出数据 证明正确
+      res.send({"error_code": 0, "reason":"旧密码正确!"});
+    } else { // 否则就是不正确
+      res.send({"error_code": 1, "reason":"旧密码错误!"})
+    }
+  })
+  // connection.query(sqlStr, (err, data) => {
+  //   if (err) throw err;
+  //   if (data.length) { // 如果查询出数据 证明正确
+  //     res.send({"error_code": 0, "reason":"旧密码正确!"});
+  //   } else { // 否则就是不正确
+  //     res.send({"error_code": 1, "reason":"旧密码错误!"})
+  //   }
+  // })
+})
+//保存新密码
+router.post('/savepwd',(req,res)=>{
+  let {username,oldPass,newPass}=req.body
+  // console.log(username,oldPass,newPsaa)
+  const sqlStr = `update account set password='${newPass}' where username='${username}' and password='${oldPass}'`;
+  // 执行sql
+  connection.query(sqlStr, (err, data) => {
+    if (err) throw err;
+    // 判断
+    if (data.affectedRows > 0) {
+      // 成功
+      res.send({"error_code": 0, "reason":"密码修改成功!请重新登录!"})
+    } else {
+      // 失败
+      res.send({"error_code": 1, "reason":"密码修改失败!"})
+    }
   })
 })
 module.exports = router; 
