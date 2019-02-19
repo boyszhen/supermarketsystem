@@ -10,6 +10,9 @@ var accountRouter = require('./routes/account');
 var loginRouter = require('./routes/login');
 //进货管理
 var incomingRouter = require('./routes/incoming')
+//出货管理
+var commodityoutRouter = require('./routes/commodityout')
+
 //会员管理
 var vipRouter = require('./routes/vip');
 // //商品管理
@@ -31,6 +34,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/account', accountRouter);
 app.use('/incoming',incomingRouter);
+app.use('/commodityout',commodityoutRouter);
 
 app.use('/login',loginRouter);
 
