@@ -76,7 +76,6 @@
                         <el-button type="primary" @click="saveVipEdit">确 定</el-button>
                     </div>
                 </el-dialog>
-
             </div>
         </el-card>
     </div>
@@ -269,8 +268,6 @@
                 }else {
                     this.$message.error("请选择后操作")
                 }
-
-
             }
 
         }
