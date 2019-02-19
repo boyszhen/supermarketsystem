@@ -24,33 +24,38 @@ router.post('/vipadd',(req,res)=>{
     });
 });
 
-//会员列表  路由
-// router.get('/viplist',(req,res) => {
-// //     //构造sql
-// //     let sqlStr = `select * from vip order by id desc`;
-// //     //执行sql
-// //     connection.query(sqlStr,(err,data)=>{
-// //        if (err) throw err;
-// //        res.send(data)
-// //     });
-// // });
+//模糊查询 路由
+router.get('/searchvip',(req,res)=>{
+    let { keyword } = req.query;
+    //构造sql
+    let sqlStr = `select * from vip where phonenumber like "%${keyword}%" or (username like "%${keyword}%" or vipnumber like "%${keyword}%")`;
+    connection.query(sqlStr,(err,data)=>{
+       if (err) throw err;
+       res.send({data});
+    });
+});
 
 //分页会员列表  路由
 router.get('/vipByPage',(req,res)=>{
-    let { currentPage,pageSize } = req.query;
+    let { currentPage,pageSize,keyword } = req.query;
     currentPage = currentPage ? currentPage : 1;
     pageSize = pageSize ? pageSize : 3;
+    let total = "";
     //构造sql
-    let sqlStr = `select * from vip order by id desc`;
+    let sqlStr = `select * from vip`;
+    if (keyword){
+        sqlStr += ` where phonenumber like "%${keyword}%" or (username like "%${keyword}%" or vipnumber like "%${keyword}%")`;
+    }
+
     connection.query(sqlStr,(err,data)=>{
-       if (err) throw err;
-       let total = data.length;
+        if (err) throw err;
+        total = data.length;
         //跳过多少条
         let n = (currentPage - 1) * pageSize;
         sqlStr += ` limit ${n},${pageSize}`;
         connection.query(sqlStr,(err,data)=>{
-           if (err) throw err;
-           res.send({total,data});
+            if (err) throw err;
+            res.send({total,data});
         });
     });
 });

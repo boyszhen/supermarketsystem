@@ -25,7 +25,7 @@ router.post('/incomingadd', (req, res) => {
       res.send({ "error_code": 1, "reason": "插入数据失败" });
     }
   })
-})
+});
 //显示库存
 router.get('/accountinstocklist', (req, res) => {
   // 查询所有账号数据(按照时间排序)
@@ -39,7 +39,7 @@ router.get('/accountinstocklist', (req, res) => {
     res.send(data);
     console.log(data)
   })
-})
+});
 //删除
 router.get('/accountinstockdel', (req, res) => {
   //接收id
@@ -57,7 +57,7 @@ router.get('/accountinstockdel', (req, res) => {
       res.send({ "error_code": 1, "reason": "删除数据失败" });
     }
   })
-})
+});
 //修改库存路由
 router.get('/accountinstockedit', (req, res) => {
   // 接收id 
@@ -70,7 +70,7 @@ router.get('/accountinstockedit', (req, res) => {
     // 把查询的数据返回给前端
     res.send(data);
   })
-})
+});
 //保存修改
 router.post('/saveeditaccountinstock', (req, res) => {
   //接收后端传来的新数据和原来的id
@@ -89,7 +89,7 @@ router.post('/saveeditaccountinstock', (req, res) => {
       res.send({ "error_code": 1, "reason": "修改数据失败" });
     }
   })
-})
+});
 //批量删除
 router.get('/batchdelete', (req, res) => {
   //接收前端传入的id
@@ -105,7 +105,7 @@ router.get('/batchdelete', (req, res) => {
       res.send({ "error_code": 1, "reason": "修改数据失败" });
     }
   })
-})
+});
 //分页
 //按分页显示数据
 router.get('/accountlistbypage', (req, res) => {
@@ -136,5 +136,5 @@ router.get('/accountlistbypage', (req, res) => {
       })
     })
   })
-})
+});
 module.exports = router;

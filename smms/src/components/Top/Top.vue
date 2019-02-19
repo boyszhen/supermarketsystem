@@ -1,5 +1,4 @@
 <template>
-
     <div class="top">
         <el-row>
             <el-col :span="12" class="title">
@@ -9,13 +8,13 @@
                 <el-row>
                     <el-col :span="18">
                         欢迎您!
-                        <el-dropdown>
+                        <el-dropdown @command="handleCommand">
                             <span class="username el-dropdown-link">
                                 {{ username }}<i class="el-icon-arrow-down el-icon--right"></i>
                             </span>
                             <el-dropdown-menu slot="dropdown">
                                 <el-dropdown-item>个人中心</el-dropdown-item>
-                                <el-dropdown-item>退出</el-dropdown-item>
+                                <el-dropdown-item command="quit">退出</el-dropdown-item>
                             </el-dropdown-menu>
                         </el-dropdown>
                     </el-col>
@@ -27,7 +26,6 @@
                 </el-row>
             </el-col>
         </el-row>
-
     </div>
 </template>
 <script>
@@ -35,6 +33,25 @@
         data (){
             return {
                 username : "李寻欢"
+            }
+        },
+        created (){
+            this.getUsername();
+        },
+        methods : {
+            getUsername (){
+                this.username = window.localStorage.getItem("username");
+            },
+            handleCommand(command) {
+                if (command === "quit") {
+                    window.localStorage.removeItem("token");
+                    this.$message.error("已退出,请重新登录");
+                    let vueObj = this
+                    setTimeout(function () {
+                        vueObj.$router.push('/login');
+                    },1000);
+
+                }
             }
         }
     }

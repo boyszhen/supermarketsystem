@@ -7,7 +7,8 @@
       <div class="text item">
         <el-form :inline="true" :model="goodsmanage" class="demo-form-inline" label-position="left">
           <el-form-item>
-            <el-select v-model="goodsmanage.categories" placeholder="--请选择分类--" label-width="50px">
+            <el-select v-model="goodsmanage.classify" placeholder="--请选择分类--" label-width="50px">
+              <el-option label="全部" value="全部"></el-option>
               <el-option label="烟酒" value="烟酒"></el-option>
               <el-option label="粮油" value="粮油"></el-option>
               <el-option label="日用品" value="日用品"></el-option>
@@ -16,11 +17,11 @@
               <el-option label="干货" value="干货"></el-option>
             </el-select>
           </el-form-item>
-          <el-form-item prop="serch" label="关键字">
-            <el-input type="text" v-model="goodsmanage.serch" autocomplete="off"></el-input>
+          <el-form-item label="关键字">
+            <el-input type="text" v-model="goodsmanage.keyword" autocomplete="off" placeholder="商品名称或商品条形码"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="onSubmit">查询</el-button>
+            <el-button type="primary" @click="search">查询</el-button>
           </el-form-item>
         </el-form>
         <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
@@ -114,8 +115,8 @@
         data() {
             return {
                 goodsmanage: {
-                    categories: "",
-                    serch: ""
+                    classify: "",
+                    keyword: ""
                 },
                 tableData: [],
                 editId : 0,
@@ -157,7 +158,9 @@
                 this.axios.get("http://127.0.0.1:888/goods/goodsByPage",{
                     params : {
                         currentPage : this.currentPage,
-                        pageSize : this.pageSize
+                        pageSize : this.pageSize,
+                        classify : this.goodsmanage.classify,
+                        keyword : this.goodsmanage.keyword
                     }
                 })
                     .then(response => {
@@ -172,6 +175,10 @@
                     .catch(err => {
                         if (err) throw err;
                     })
+            },
+            //查询函数
+            search(){
+              this.getGoodsListByPage();
             },
             // 每页条数改变
             handleSizeChange(val) {

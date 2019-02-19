@@ -126,6 +126,12 @@ export default {
 <style lang="less">
 .passwordmodify {
   .el-card {
+          .el-card__header{
+              text-align: left;
+              font-size: 20px;
+              font-weight: 600;
+              background: #f1f1f1;
+          }
     border: 1px solid #ccc;
     .el-card__body {
       .text {

@@ -73,7 +73,7 @@ export default {
             password: this.loginForm.password
           };
           this.axios
-            .post("http://127.0.0.1:666/login/checklogin", qs.stringify(params))
+            .post("http://127.0.0.1:888/login/checklogin", qs.stringify(params))
             .then(response => {
               //接收后台传来的数据
               let { error_code, reason, token, username } = response.data;

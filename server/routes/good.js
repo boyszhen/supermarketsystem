@@ -95,14 +95,24 @@ router.get('/batchDelete',(req,res)=>{
 
 //分页
 router.get('/goodsByPage',(req,res)=>{
-    let { currentPage,pageSize } = req.query;
+    let { currentPage,pageSize,classify,keyword } = req.query;
     currentPage = currentPage ? currentPage : 1;
     pageSize = pageSize ? pageSize : 3;
+    let total = "";
     //构造sql
-    let sqlStr = `select * from goods order by id desc`;
+    let sqlStr = `select * from goods`;
+    if (classify !== "" && classify !== "全部"){
+        sqlStr += ` where goodclass = "${classify}"`
+    }
+    if (keyword && classify){
+        sqlStr += ` and (goodbarcode like "%${keyword}%" or goodname like "%${keyword}%")`
+    }else if (keyword){
+        sqlStr += ` where 1 = 1 and (goodbarcode like "%${keyword}%" or goodname like "%${keyword}%")`
+    }
+    sqlStr += ` order by id desc`;
     connection.query(sqlStr,(err,data)=>{
         if (err) throw err;
-        let total = data.length;
+        total = data.length;
         //跳过多少条
         let n = (currentPage - 1) * pageSize;
         sqlStr += ` limit ${n},${pageSize}`;

@@ -7,8 +7,8 @@
             </div>
             <div class="text item">
                 搜索:
-                <el-input placeholder="请输入会员卡，会员名，电话手机" width="300px"></el-input>
-                <el-button type="success" size="mini">查询</el-button>
+                <el-input v-model="searchKeyWord" placeholder="请输入会员卡，会员名，电话手机" width="300px"></el-input>
+                <el-button type="success" size="mini" @click="search">查询</el-button>
                 <el-table  :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
                     <el-table-column type="selection" width="55">
                     </el-table-column>
@@ -101,31 +101,22 @@
                 batchId : [],
                 currentPage : 1,
                 pageSize : 3,
-                total : 0
-
+                total : 0,
+                searchKeyWord : ""
             };
         },
         created (){
             this.getVipListByPage();
         },
         methods: {
-            //获取会员列表数据
-            // getVipList (){
-            //     this.axios.get("http://127.0.0.1:888/vip/viplist")
-            //         .then(response =>{
-            //             this.tableData = response.data;
-            //         })
-            //         .catch(err=> {
-            //
-            //         })
-            // },
             //根据页码和每页数据条数获取数据函数
             getVipListByPage(){
                 //发送数据给后端
                 this.axios.get("http://127.0.0.1:888/vip/vipByPage",{
                     params : {
                         currentPage : this.currentPage,
-                        pageSize : this.pageSize
+                        pageSize : this.pageSize,
+                        keyword : this.searchKeyWord
                     }
                 })
                     .then(response => {
@@ -141,6 +132,15 @@
                     .catch(err => {
                         if (err) throw err;
                     })
+            },
+            //搜索函数
+            search(){
+                if (this.searchKeyWord){
+                    this.getVipListByPage();
+                } else{
+                    this.$message.error("请输入要查询的关键字");
+                }
+
             },
             handleSelectionChange(val) {
                 this.batchId = val;
