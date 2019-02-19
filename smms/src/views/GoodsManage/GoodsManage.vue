@@ -77,7 +77,7 @@
         },
         methods: {
             getGoodsList(){
-                this.axios.get("http://127.0.0.1:888/goods/goodslist")
+                this.axios.get("http://127.0.0.1:666/goods/goodslist")
                     .then(response => {
                         this.tableData = response.data
                     })

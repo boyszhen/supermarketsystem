@@ -65,6 +65,7 @@ export default {
           }else{
             callback()
           }
+          console.log(response.data)
         })
         .catch(err => {
           console.log(err);

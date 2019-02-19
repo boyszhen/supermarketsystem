@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const connection = require('./connect') 
 
+
 /* GET users listing. */
 //设置请求头解决跨域 
 router.all('*', (req, res, next) => {
@@ -145,14 +146,6 @@ router.get('/checkoldpasword',(req,res)=>{
       res.send({"error_code": 1, "reason":"旧密码错误!"})
     }
   })
-  // connection.query(sqlStr, (err, data) => {
-  //   if (err) throw err;
-  //   if (data.length) { // 如果查询出数据 证明正确
-  //     res.send({"error_code": 0, "reason":"旧密码正确!"});
-  //   } else { // 否则就是不正确
-  //     res.send({"error_code": 1, "reason":"旧密码错误!"})
-  //   }
-  // })
 })
 //保存新密码
 router.post('/savepwd',(req,res)=>{

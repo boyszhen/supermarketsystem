@@ -9,10 +9,10 @@ router.all('*', (req, res, next) => {
 });
 //添加库存
 router.post('/incomingadd', (req, res) => {
-  let { producbarcode, goodname, purchaseprice, storabge, instock, sold } = req.body;
+  let { producbarcode, goodname, purchaseprice, storabge, instock, sold,categories } = req.body;
   //把数据存入数据库
   //构造添加账号的sql语句
-  const sqlStr = `insert into incoming(producbarcode,goodname,purchaseprice,storabge,instock,sold) values('${producbarcode}', '${goodname}', '${purchaseprice}', '${storabge}', '${instock}', '${sold}')`;
+  const sqlStr = `insert into incoming(producbarcode,goodname,purchaseprice,storabge,instock,sold,categories) values('${producbarcode}', '${goodname}', '${purchaseprice}', '${storabge}', '${instock}', '${sold}','${categories}')`;
   console.log(sqlStr);
   connection.query(sqlStr, (err, data) => {
     if (err) throw err;
@@ -110,18 +110,33 @@ router.get('/batchdelete', (req, res) => {
 //按分页显示数据
 router.get('/accountlistbypage', (req, res) => {
   //接收前端参数
-  let { pageSize, currentPage } = req.query;
+  let { pageSize, currentPage,categories,serch } = req.query;
   // 默认值
   //当页面没有时
   pageSize = pageSize ? pageSize : 3;
   //当前页面
   currentPage = currentPage ? currentPage : 1;
-  let sqlStr = `select *from incoming order by ctime desc`;
+  let sqlStr = `select * from incoming where 1 = 1`;
   // console.log(sqlStr)
   connection.query(sqlStr, (err, data) => {
     if (err) throw err
     //计算数据总条数
     let total = data.length;
+    // 分类名不为空 且 全部 那么 就拼接分类条件
+    if (categories !== "" && categories !== "全部") {
+      sqlStr += ` and categories='${categories}'`;
+    }
+    // 如果关键字不为空 就要拼接关键字查询条件
+    if (serch !== "") {
+      sqlStr += ` and (goodname like "%${serch}%" or producbarcode like "%${serch}%")`
+    }
+    // 再次按照 查询的条件查询数据 重新计算数据的总条数
+    connection.query(sqlStr, (err, data) => {
+      if (err) throw err;
+      total = data.length;
+    })
+     // 拼接排序
+     sqlStr += ` order by ctime desc`;
     //分页条件 跳过几条
     let n = (currentPage - 1) * pageSize
     //拼接sql语句
