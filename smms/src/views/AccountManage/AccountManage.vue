@@ -9,7 +9,7 @@
                 搜索:
                 <el-input v-model="searchKeyWord" placeholder="请输入会员卡，会员名，电话手机" width="300px"></el-input>
                 <el-button type="success" size="mini" @click="search">查询</el-button>
-                <el-table  :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
+                <el-table ref="multipleTable"  :data="tableData" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
                     <el-table-column type="selection" width="55">
                     </el-table-column>
                     <el-table-column prop="vipnumber" label="会员卡卡号">
@@ -48,6 +48,7 @@
                         :total="total">
                 </el-pagination>
                 <el-button type="danger" @click="batchDelete">批量删除</el-button>
+                <el-button @click="canselSelect()">取消选择</el-button>
                 <el-dialog title="修改会员信息" :visible.sync="flag">
                     <el-form :model="form">
                         <el-form-item label="会员名称" :label-width="formLabelWidth">
@@ -268,7 +269,10 @@
                 }else {
                     this.$message.error("请选择后操作")
                 }
-            }
+            },
+            canselSelect(rows) {
+                this.$refs.multipleTable.clearSelection();
+            },
 
         }
     };

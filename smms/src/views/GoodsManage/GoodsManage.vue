@@ -56,7 +56,6 @@
             </template>
           </el-table-column>
         </el-table>
-        <el-button type="danger" @click="batchDelete">批量删除</el-button>
         <el-pagination
                 @size-change="handleSizeChange"
                 @current-change="handleCurrentChange"
@@ -66,6 +65,11 @@
                 layout="total, sizes, prev, pager, next, jumper"
                 :total="total">
         </el-pagination>
+        <div class="delete">
+          <el-button type="danger" @click="batchDelete">批量删除</el-button>
+          <el-button @click="canselSelect()">取消选择</el-button>
+        </div>
+
         <el-dialog title="修改商品信息" :visible.sync="flag">
           <el-form :model="form">
             <el-form-item label="所属分类" :label-width="formLabelWidth">
@@ -190,8 +194,8 @@
                 this.currentPage = val;
                 this.getGoodsListByPage();
             },
-            onSubmit() {
-                console.log("submit!");
+            canselSelect(rows) {
+                this.$refs.multipleTable.clearSelection();
             },
             handleSelectionChange(val) {
                 this.batchDeleteId = val;
@@ -341,6 +345,9 @@
       .el-card__body {
         .text {
           .el-pagination {
+            margin-top: 30px;
+          }
+          .delete{
             margin-top: 30px;
           }
           .el-dialog__wrapper{
