@@ -10,9 +10,12 @@ var accountRouter = require('./routes/account');
 var loginRouter = require('./routes/login');
 //进货管理
 var incomingRouter = require('./routes/incoming')
+//出货管理
+var commodityoutRouter = require('./routes/commodityout')
+
 //会员管理
 var vipRouter = require('./routes/vip');
-//商品管理
+// //商品管理
 var goodRouter = require('./routes/good');
 
 var app = express();
@@ -31,11 +34,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/account', accountRouter);
 app.use('/incoming',incomingRouter);
+app.use('/commodityout',commodityoutRouter);
 
 app.use('/login',loginRouter);
 
-app.use('/vip',vipRouter);
-app.use('/goods',goodRouter);
+// app.use('/vip',vipRouter);
+// app.use('/goods',goodRouter);
 
 
 
@@ -54,7 +58,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(888,()=>{
-  console.log("服务器启动成功，地址是：http://127.0.0.1:888")
+app.listen(666,()=>{
+  console.log("服务器启动成功，地址是：http://127.0.0.1:666")
 });
 module.exports = app;

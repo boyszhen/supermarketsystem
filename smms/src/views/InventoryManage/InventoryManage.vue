@@ -9,6 +9,7 @@
         <el-form :inline="true" :model="instockmanage" class="demo-form-inline" label-position="left">
           <el-form-item label="分类">
             <el-select v-model="instockmanage.categories" placeholder="--请选择分类--" label-width="50px">
+              <el-option label="全部" value="全部"></el-option>
               <el-option label="烟酒" value="烟酒"></el-option>
               <el-option label="粮油" value="粮油"></el-option>
               <el-option label="日用品" value="日用品"></el-option>
@@ -31,7 +32,8 @@
           </el-table-column>
           <el-table-column prop="goodname" label="商品名称">
           </el-table-column>
-
+          <el-table-column prop="categories" label="商品分类">
+          </el-table-column>
           <el-table-column prop="purchaseprice" label="进价(元)">
           </el-table-column>
           <el-table-column prop="storabge" label="入库">
@@ -71,6 +73,9 @@
             <el-form-item label="商品名称:" prop="goodname" class="mini" placeholder="请输入商品名称">
               <el-input type="text" v-model="instockaddAddForm.goodname" autocomplete="off" placeholder="请输入商品名称"></el-input>
             </el-form-item>
+            <el-form-item label="商品分类:" prop="categories" class="mini" placeholder="请输入商品分类">
+              <el-input type="text" v-model="instockaddAddForm.categories" autocomplete="off" placeholder="请输入商品名称"></el-input>
+            </el-form-item>
             <el-form-item label="进价：" prop="purchaseprice">
               <el-input type="text" v-model="instockaddAddForm.purchaseprice" autocomplete="off" placeholder="请输入进价"></el-input>
             </el-form-item>
@@ -108,7 +113,8 @@ export default {
         purchaseprice: "",
         storabge: "",
         instock: "",
-        sold: ""
+        sold: "",
+        categories: ""
       },
       editId: "",
       selectedAccount: [], //被选中的表格数据
@@ -131,13 +137,16 @@ export default {
       let pageSize = this.pageSize;
       let currentPage = this.currentPage;
       this.axios
-        .get("http://127.0.0.1:888/incoming/accountlistbypage", {
+        .get("http://127.0.0.1:666/incoming/accountlistbypage", {
           // http://127.0.0.1:666/incoming/accountlistbypage 正确的
           // http://127.0.0.1:666/incoming/accountlistbypage 错误的
           params: {
             pageSize,
-            currentPage
+            currentPage,
+            categories: this.instockmanage.categories, // 查询分类名
+            serch: this.instockmanage.serch //关键字
           }
+          
         })
         .then(response => {
           let { total, data } = response.data;
@@ -154,8 +163,9 @@ export default {
           console.log(err);
         });
     },
+    //查询
     onSubmit() {
-      console.log("submit!");
+      this.getAccountListByPage();
     },
     handleSelectionChange(val) {
       this.selectedAccount = val;
@@ -167,7 +177,7 @@ export default {
       // 显示模态框
       this.flag = true;
       this.axios
-        .get(`http://127.0.0.1:888/incoming/accountinstockedit?id=${id}`)
+        .get(`http://127.0.0.1:666/incoming/accountinstockedit?id=${id}`)
         .then(response => {
           let result = response.data[0];
           //回填数据
@@ -177,6 +187,7 @@ export default {
             (this.instockaddAddForm.storabge = result.storabge),
             (this.instockaddAddForm.instock = result.instock),
             (this.instockaddAddForm.sold = result.sold);
+          this.instockaddAddForm.categories = result.categories;
         })
         .catch(err => {
           console.log(err);
@@ -190,13 +201,14 @@ export default {
         storabge: this.instockaddAddForm.storabge,
         instock: this.instockaddAddForm.instock,
         sold: this.instockaddAddForm.sold,
+        categories: this.instockaddAddForm.categories,
         editId: this.editId
       };
       // console.log(params);
       //发送axios把新数据传给后端
       this.axios
         .post(
-          "http://127.0.0.1:888/incoming/saveeditaccountinstock",
+          "http://127.0.0.1:666/incoming/saveeditaccountinstock",
           qs.stringify(params)
         )
         .then(response => {
@@ -230,7 +242,7 @@ export default {
       }).then(() => {
         //发送ajax把id传给后端
         this.axios
-          .get(`http://127.0.0.1:888/incoming/accountinstockdel?id=${id}`)
+          .get(`http://127.0.0.1:666/incoming/accountinstockdel?id=${id}`)
           .then(response => {
             console.log(response.data);
             // 接收后端返回的错误码 和 提示信息
@@ -272,7 +284,7 @@ export default {
         .then(() => {
           //发送axios把收集的id传给后端
           this.axios
-            .get(`http://127.0.0.1:888/incoming/batchdelete`, {
+            .get(`http://127.0.0.1:666/incoming/batchdelete`, {
               params: {
                 selectId
               }
@@ -307,7 +319,7 @@ export default {
     //分页
     handleSizeChange(val) {
       //每页显示条数
-       this.currentPage = val;
+      this.pageSize = val;
       //调用分页函数
       this.getAccountListByPage();
     },
@@ -319,7 +331,7 @@ export default {
     },
     canselSelect(rows) {
       this.$refs.multipleTable.clearSelection();
-    },
+    }
   }
 };
 </script>

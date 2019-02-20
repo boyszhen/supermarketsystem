@@ -147,6 +147,10 @@
             this.getGoodsListByPage();
         },
         methods: {
+<<<<<<< HEAD
+            getGoodsList(){
+                this.axios.get("http://127.0.0.1:666/goods/goodslist")
+=======
             // getGoodsList() {
             //     this.axios.get("http://127.0.0.1:888/goods/goodslist")
             //         .then(response => {
@@ -167,6 +171,7 @@
                         keyword : this.goodsmanage.keyword
                     }
                 })
+>>>>>>> ee33e7454faef02ec20d2a5bfc924cc701d6d918
                     .then(response => {
                         let {total,data} = response.data;
                         this.total = total;

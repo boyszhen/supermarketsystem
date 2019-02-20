@@ -7,10 +7,10 @@
                     <el-input type="text" v-model="loginForm.username" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="password">
-                    <el-input type="text" v-model="loginForm.password" autocomplete="off"></el-input>
+                    <el-input type="password" v-model="loginForm.password" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="确认密码" prop="checkPwd">
-                    <el-input v-model.number="loginForm.checkPwd"></el-input>
+                    <el-input v-model.number="loginForm.checkPwd" type="password"></el-input>
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click="submitForm('loginForm')">提交</el-button>
@@ -57,7 +57,7 @@ export default {
       loginRules: {
         username: [
           { required: true, message: "请输入账号", trigger: "blur" },
-          { min: 3, max: 6, message: "请输入3 - 6 位" }
+          { min: 3, max: 9, message: "请输入3 - 9 位" }
         ],
         password: [{ required: true, validator: pass, trigger: "blur" }],
         checkPwd: [{ required: true, validator: checkPass, trigger: "blur" }]

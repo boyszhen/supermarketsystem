@@ -13,6 +13,16 @@
           <el-form-item label="商品名称:" prop="goodname" class="max" placeholder="请输入商品名称">
             <el-input type="text" v-model="instockaddAddForm.goodname" autocomplete="off" placeholder="请输入商品名称"></el-input>
           </el-form-item>
+          <el-form-item label="分类" prop="categories">
+            <el-select v-model="instockaddAddForm.categories" placeholder="--请选择分类--" label-width="50px">
+              <el-option label="烟酒" value="烟酒"></el-option>
+              <el-option label="粮油" value="粮油"></el-option>
+              <el-option label="日用品" value="日用品"></el-option>
+              <el-option label="饮料" value="饮料"></el-option>
+              <el-option label="水果" value="水果"></el-option>
+              <el-option label="干货" value="干货"></el-option>
+            </el-select>
+          </el-form-item>
           <el-form-item label="进价：" prop="purchaseprice">
             <el-input type="text" v-model="instockaddAddForm.purchaseprice" autocomplete="off" placeholder="请输入进价"></el-input>
           </el-form-item>
@@ -45,7 +55,8 @@ export default {
         purchaseprice: "",
         storabge: "",
         instock: "",
-        sold: ""
+        sold: "",
+        categories:""
       },
       rules: {
         producbarcode: [
@@ -63,7 +74,9 @@ export default {
         instock: [
           { required: true, message: "请输入库存数量", trigger: "blur" }
         ],
-        sold: [{ required: true, message: "请输入已售数量", trigger: "blur" }]
+        sold: [{ required: true, message: "请输入已售数量", trigger: "blur" }],
+        categories: [{ required: true, message: "请选择分类", trigger: "blur" }]
+        
       }
     };
   },
@@ -77,11 +90,12 @@ export default {
             purchaseprice: this.instockaddAddForm.purchaseprice,
             storabge: this.instockaddAddForm.storabge,
             instock: this.instockaddAddForm.instock,
-            sold: this.instockaddAddForm.sold
+            sold: this.instockaddAddForm.sold,
+            categories: this.instockaddAddForm.categories 
           };
           this.axios
             .post(
-              "http://127.0.0.1:888/incoming/incomingadd",
+              "http://127.0.0.1:666/incoming/incomingadd",
               qs.stringify(params)
             )
             .then(response => {

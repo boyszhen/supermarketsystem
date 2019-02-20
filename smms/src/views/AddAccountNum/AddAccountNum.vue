@@ -88,7 +88,7 @@ export default {
           };
           this.axios 
             .post(
-              "http://127.0.0.1:888/account/accountadd",
+              "http://127.0.0.1:666/account/accountadd",
               qs.stringify(params)
             )
             .then(response => {
